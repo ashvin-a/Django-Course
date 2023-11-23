@@ -13,3 +13,6 @@ def month_response(request,month):
     else:
         return HttpResponseNotFound("Ithu ninte area alla!")
     return HttpResponse(text)
+
+def month_int(request,month):
+    return HttpResponse(month)
