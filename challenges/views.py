@@ -38,9 +38,12 @@ def month_int(request,month):
     return HttpResponseRedirect(ftext)
 
 def show_months(request):
-    d = []
-    for i in month_response.keys():
-        d.append(f"<li><a href={i}>{i}</a><li>")  
-    return HttpResponse(d)
+    d = ""
+    l=list(month_response.keys())
+    for i in l:
+        path = reverse("month_name",args=[i])
+        d += f"<li><a href={path}>{i.capitalize()}</a></li><br>"
+    response = f"<ul> {d} </ul>"
+    return HttpResponse(response)
         
     
