@@ -1,12 +1,15 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse,HttpResponseNotFound
 # Create your views here.
 
-def january(request):
-    return HttpResponse("To a new beginning!")
-
-def february(request):
-    return HttpResponse('Only 29 days for this month!')
-
-def march(request):
-    return HttpResponse('Summer is around the corner!')
+def month_response(request,month):
+    text = ""
+    if month=="january":
+        text = "To a new beginning!"
+    elif month=="february":
+        text = "Only 29 days for this month!"
+    elif month=="march":
+        text = "Summer is around the corner"
+    else:
+        return HttpResponseNotFound("Ithu ninte area alla!")
+    return HttpResponse(text)
