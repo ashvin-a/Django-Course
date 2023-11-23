@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse,HttpResponseNotFound
+from django.http import HttpResponse,HttpResponseNotFound,HttpResponseRedirect
 # Create your views here.
 
 month_response = {
@@ -24,3 +24,12 @@ def month_res(request,month):
         return HttpResponseNotFound("Ithu ninte area allaa!!")
     return HttpResponse(text)
 
+def month_int(request,month):
+    if 0<month<13:
+        months = list(month_response.keys())
+        text = months[month-1]
+        
+    else:
+        return HttpResponseNotFound("There are only 12 months!!")
+    
+    return HttpResponseRedirect("/challenges/" + text)
