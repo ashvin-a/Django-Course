@@ -1,18 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> {{ month }} Challenge</title>
-</head>
-<body>
-    <h1>{{ month|title }}</h1>
-    <!-- Nice method -->
-    {% if challenge is not None %}
-        <h2>{{ challenge }}</h2>
-    {% else %}
-        <h2>Nothing here to see!</h2>
-    {% endif %} 
+{% extends "base.html" %}
+    {% block pagetitle %}
+    {{ month }} Challenge
+    {% endblock %}
+
+    {% block content %}
+        <h1>{{ month|title }}</h1>
+        <!-- Nice method -->
+        {% if challenge is not None %}
+            <h2>{{ challenge }}</h2>
+        {% else %}
+            <h2>Nothing here to see!</h2>
+        {% endif %}
+    {% endblock %} 
     
-</body>
-</html>
