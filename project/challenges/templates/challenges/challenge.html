@@ -1,18 +1,21 @@
 {% extends "base.html" %}
+{%load static%}
+{%block css_file%}
+    <link rel="stylesheet" href="{%static 'challenges/challenge.css'%}">
+{%endblock%}
     {% block pagetitle %}
     {{ month }} Challenge
     {% endblock %}
-
+    
     {% block content %}
         {% include "challenges/includes/header.html"%}
         {% comment %} include can use the value of other variables.eg: 
         see header.html {% endcomment %}
         <h1>{{ month|title }}</h1>
-        <!-- Nice method -->
         {% if challenge is not None %}
             <h2>{{ challenge }}</h2>
         {% else %}
-            <h2>Nothing here to see!</h2>
+            <p class="fallback">Nothing here to see!</p>
         {% endif %}
     {% endblock %} 
     
