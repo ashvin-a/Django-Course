@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse,HttpResponseNotFound,HttpResponseRedirect
 from django.urls import reverse
+from django.template.loader import render_to_string
 # Create your views here.
 
 month_response = {
@@ -43,7 +44,7 @@ def show_months(request):
     for i in l:
         path = reverse("month_name",args=[i])
         d += f"<li><a href={path}>{i.capitalize()}</a></li><br>"
-    response = f"<ul> {d} </ul>"
+    response = render_to_string("challenges/challenge.html")
     return HttpResponse(response)
         
     
