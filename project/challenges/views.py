@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse,HttpResponseNotFound,HttpResponseRedirect
+from django.http import HttpResponseNotFound,HttpResponseRedirect,Http404
 from django.urls import reverse
 # Create your views here.
 
@@ -22,7 +22,7 @@ def month_res(request,month):
     try:
         res = month_response[month]
     except:
-        return HttpResponseNotFound("Ithu ninte area allaa!!")
+        raise Http404()
     return render(request,"challenges/challenge.html",{"month":month.capitalize(),"challenge":res})
 
 def month_int(request,month):

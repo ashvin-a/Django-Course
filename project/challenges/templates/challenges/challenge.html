@@ -4,6 +4,9 @@
     {% endblock %}
 
     {% block content %}
+        {% include "challenges/includes/header.html"%}
+        {% comment %} include can use the value of other variables.eg: 
+        see header.html {% endcomment %}
         <h1>{{ month|title }}</h1>
         <!-- Nice method -->
         {% if challenge is not None %}
