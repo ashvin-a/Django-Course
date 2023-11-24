@@ -6,8 +6,13 @@
     <title> {{ month }} Challenge</title>
 </head>
 <body>
-    <h1>{{ month }}</h1>
+    <h1>{{ month|title }}</h1>
     <!-- Nice method -->
-    <h2>{{ challenge|title }}</h2> 
+    {% if challenge is not None %}
+        <h2>{{ challenge }}</h2>
+    {% else %}
+        <h2>Nothing here to see!</h2>
+    {% endif %} 
+    
 </body>
 </html>

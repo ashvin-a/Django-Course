@@ -11,7 +11,7 @@ month_response = {
     "may":"May Day Holiday",
     "june":"Meh this is getting boring",
     "july":"Yeah its definetly getting boring",
-    "august":"Leo was born",
+    "august":None,
     "september":"Its about damn time we take on a challenge",
     "october":"Lets hit gym all day",
     "november":"#NNN",
