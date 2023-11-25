@@ -1,3 +1,4 @@
 {
     "python.languageServer": "Pylance",
+    "emmet.includeLanguages": {"django-html":"html"}
 }
